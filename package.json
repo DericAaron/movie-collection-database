@@ -1,0 +1,26 @@
+{
+  "name": "movie-collection-database",
+  "version": "1.0.0",
+  "description": "Goal: create a website that users can add movies and genres to. Created Genres will be available to all users.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DericAaron/movie-collection-database.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DericAaron/movie-collection-database/issues"
+  },
+  "homepage": "https://github.com/DericAaron/movie-collection-database#readme",
+  "dependencies": {
+    "angular-route": "^1.7.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
+  }
+}
