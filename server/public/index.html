@@ -10,12 +10,20 @@
     <script src="vendors/angular-route.min.js"></script>
     <!-- scripts -->
     <script src="scripts/client.js"></script>
-    
+
     <title>Movie Library</title>
 </head>
 <body>
     <header>
         <h1>Movie Library</h1>
+        <nav>
+            <a href="#!/add_movie"><button>Add Entry</button></a> 
+            <a href="#!/manage_genre"><button>Manage Genres</button></a> 
+        </nav>
     </header>
+    <section ng-app="app">
+        <ng-view></ng-view>
+    </section>
+    
 </body>
 </html>
