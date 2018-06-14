@@ -5,7 +5,7 @@ const pg = require('pg');
 const Pool = pg.Pool;
 
 //name of DB ----------------------------ADD NEW
-const DATABASE_NAME = 'real_estate';
+const DATABASE_NAME = 'movie_db';
 
 //configuration
 const config = {
