@@ -39,4 +39,17 @@ app.service('MovieService', function($http){
             console.log('Error in POST movie');  
         });
     }//end post
+
+    sv.delete = function(id){
+        return $http({
+            method: 'DELETE',
+            url: `/movie/${id}`
+        }).then(function(response){
+            console.log('deleted', id);
+            
+        }).catch(function(error){
+            console.log('Error in delete movie');
+            
+        });
+    }//end delete
 }); //end MovieService
