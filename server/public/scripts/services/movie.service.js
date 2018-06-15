@@ -24,5 +24,19 @@ app.service('MovieService', function($http){
         }).catch(function(err){
             console.log('Error in Movie_getGenre');
         });
-    }
+    }//end getGenre
+
+    sv.postMovie = function( movie ){
+        console.log('in post movie');
+        
+        return $http({
+            method: 'POST',
+            url: '/movie',
+            data: movie
+        }).then(function(response){
+            console.log('Movie posted');
+        }).catch(function(error){
+            console.log('Error in POST movie');  
+        });
+    }//end post
 }); //end MovieService

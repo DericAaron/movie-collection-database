@@ -12,3 +12,7 @@ nav .navbutton {
 
     width: 50%;
 }
+
+#lowerInputBar {
+    display: inline-block;
+}
