@@ -4,7 +4,8 @@ const pool = require('../modules/pool'); //pull in pool.js
 
 router.get('/', (req, res) => {
 
-    const queryText = 'SELECT * FROM movie'
+    const queryText = `SELECT movie.id, movie.title, movie.release_date, genre.genre_name FROM movie
+    JOIN genre ON movie.genre_id=genre.id;`;
     pool.query(queryText)
         .then((result) => {
             res.send(result.rows);

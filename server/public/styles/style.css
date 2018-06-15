@@ -1,0 +1,14 @@
+#title {
+    background-color: black;
+    color: white;
+    padding-top: 2%;
+}
+
+nav{
+   
+    background-color: lightgray;
+}
+nav .navbutton {
+
+    width: 50%;
+}

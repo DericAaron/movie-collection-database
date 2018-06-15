@@ -1,1 +1,19 @@
 <h2>Add Movie</h2>
+
+<div ng-controller="MovieController as MC">
+    <div>
+        <input type="text" placeholder="Name" ng-model="MC.titleIn">
+    </div>
+    <div>
+        <select ng-model="MC.genreIn">
+            <option ng-repeat="genre in MC.genre" ng-value="{{genre.genre_id}}">{{genre.genre_name}}</option>
+        </select>
+    </div>
+
+    <hr>
+    <div ng-repeat="movie in MC.movie">
+        <p>{{movie.title}}</p>
+        <p>{{movie.genre_name}}</p>
+        <p>{{movie.release_date.substring(0,10)}}</p>
+    </div>
+</div>

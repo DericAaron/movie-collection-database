@@ -1,4 +1,4 @@
-const app = angular.module('app', ['ngRoute']);
+const app = angular.module('app', ['ngRoute', 'ngMaterial']);
 
 app.config(function($routeProvider){
     $routeProvider.when('/', {

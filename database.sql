@@ -6,6 +6,8 @@ CREATE TABLE genre(
 CREATE TABLE movie (
     id SERIAL PRIMARY KEY,
     title VARCHAR(200) NOT NULL,
-    genre_id INTEGER NOT NULL REFERENCES genre
+    genre_id INTEGER NOT NULL REFERENCES genre,
+    release_date DATE NOT NULL,
+    run_time INTEGER NOT NULL
 );
 
