@@ -1,1 +1,29 @@
-<h2>Manage Genre</h2>
+<h2>Add Genre</h2>
+
+<div ng-controller="GenreController as GC">
+    <div class="inputArea">
+        <md-input-container>
+            <input type="text" placeholder="Project Name" ng-model="GC.genreIn">
+        </md-input-container>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Total Movies</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="genre in GC.genre">
+                    <td>{{genre.genre_name}}</td>
+                    <td>{{genre.count}}</td>
+                    <td><button ng-click="GC.removeMe( genre.id )">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

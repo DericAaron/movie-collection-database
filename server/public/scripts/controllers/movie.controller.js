@@ -4,9 +4,6 @@ app.controller('MovieController', function(MovieService){
     vm.movie = [];
     vm.genre = [];
 
-
-
-
     vm.getAllMovie = function(){
         MovieService.getMovie().then(function(){
             vm.movie = MovieService.movie;

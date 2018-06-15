@@ -4,7 +4,20 @@ const pool = require('../modules/pool'); //pull in pool.js
 
 router.get('/', (req, res) => {
 
-    const queryText = 'SELECT * FROM genre'
+    const queryText = 'SELECT * FROM genre';
+    pool.query(queryText)
+        .then((result) => {
+            res.send(result.rows);
+        }).catch((err) => {
+            res.sendStatus(500);
+        });
+}); //end GET
+
+router.get('/count', (req, res) => {
+
+    const queryText = `SELECT genre.id, genre.genre_name, COUNT(movie.genre_id) FROM movie
+    JOIN genre ON movie.genre_id=genre.id
+    GROUP BY genre.id, genre.genre_name;`;
     pool.query(queryText)
         .then((result) => {
             res.send(result.rows);
