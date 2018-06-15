@@ -13,8 +13,11 @@ app.controller('GenreController', function(GenreService){
 
     vm.submitGenre = function(){
         let genreToSend = {
-            genre_name: vm.genreNameIn
+            genre_name: vm.genreIn
         };
+
+        console.log('GenreToSend: ', genreToSend);
+        
         GenreService.postGenre(genreToSend).then(function(){
             vm.getAllGenre();
         });

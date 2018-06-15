@@ -27,7 +27,7 @@ app.service('MovieService', function($http){
     }//end getGenre
 
     sv.postMovie = function( movie ){
-        console.log('in post movie');
+        console.log('in post movie', movie);
         
         return $http({
             method: 'POST',

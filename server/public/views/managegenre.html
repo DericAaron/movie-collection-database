@@ -1,10 +1,12 @@
-<h2>Add Genre</h2>
 
-<div ng-controller="GenreController as GC">
-    <div class="inputArea">
+
+<div ng-controller="GenreController as GC" class="container">
+    <h2>Add Genre</h2>
+    <div class="md-block">
         <md-input-container>
             <input type="text" placeholder="Project Name" ng-model="GC.genreIn">
         </md-input-container>
+        <md-button ng-click="GC.submitGenre()">Submit</md-button>
     </div>
 
     <div>

@@ -6,7 +6,7 @@ app.service('GenreService', function($http){
     sv.getGenreCount = function(){
         return $http({
             method: 'GET',
-            url: '/genre'
+            url: '/genre/count'
         }).then(function(response){
             sv.genre = response.data;
         }).catch(function(error){

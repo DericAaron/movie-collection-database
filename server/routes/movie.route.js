@@ -4,7 +4,7 @@ const pool = require('../modules/pool'); //pull in pool.js
 
 router.get('/', (req, res) => {
 
-    const queryText = `SELECT movie.id, movie.title, movie.release_date, genre.genre_name, movie.run_time FROM movie
+    const queryText = `SELECT movie.id, movie.title, movie.release_date, genre.genre_name, movie.run_time, movie.image FROM movie
     JOIN genre ON movie.genre_id=genre.id;`;
     pool.query(queryText)
         .then((result) => {
@@ -17,8 +17,10 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 
     const movie = req.body
-    const queryText = 'INSERT INTO movie (title, genre_id, release_date, run_time) VALUES($1, $2, $3, $4)';
-    pool.query(queryText, [movie.title, movie.genre_id, movie.release_date, movie.run_time])
+    console.log(movie.image);
+    
+    const queryText = 'INSERT INTO movie (title, genre_id, release_date, run_time, image) VALUES($1, $2, $3, $4, $5)';
+    pool.query(queryText, [movie.title, movie.genre_id, movie.release_date, movie.run_time, movie.image])
         .then( (result) => {
             console.log('movie posted succesfully');
             res.sendStatus(200);

@@ -1,14 +1,19 @@
-<h2>Add Movie</h2>
 
-<div ng-controller="MovieController as MC">
+
+<div ng-controller="MovieController as MC" class="container" layout="column">
+    <h2>Add Movie</h2>
     <div>
-        <md-input-container>
+        <md-input-container class="md-block">
             <input type="text" placeholder="Name" ng-model="MC.titleIn">
         </md-input-container>
+        <md-input-container class="md-block">
+            <input type="text" placeholder="Image URL" ng-model="MC.imageIn">
+        </md-input-container>
     </div>
-    <div id="lowerInputBar">
+    <div layout="row" layout-xs="column" class="md-block" >
         <md-input-container>
             <select ng-model="MC.genreIn">
+                <option value="">----Please Select----</option>
                 <option ng-repeat="genre in MC.genre" ng-value="genre.id">{{genre.genre_name}}</option>
             </select>
         </md-input-container>
@@ -21,17 +26,17 @@
 
     <hr>
         <div>
-            <md-card ng-repeat="movie in MC.movie">
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">{{movie.title}}</span>
-                        <span class="md-subhead">{{movie.genre_name}}</span>
-                    </md-card-title-text>
+            <md-card ng-repeat="movie in MC.movie" class="movieCard" layout="column" flex="50" flex-gt-sm="20">
+                <md-card-title layout="column">
+                    <p>{{movie.title}}</p>
+                    <p>{{movie.genre_name}}</p>
+                </md-card-title>
                     <md-card-content>
-                        <p>Release Date: {{movie.release_date.substring(0,10)}}</p>
+                        <img ng-src="{{movie.image}}" alt="Not Found" class="md-media-sm" style="width: 100%">
+                        <p>Release Date: {{movie.release_date.substring(0,10) | date: 'MM/dd/yyyy'}}</p>
                         <p>minutes: {{movie.run_time}}</p>
                     </md-card-content>
-                </md-card-title>
+                
                 <md-card-actions layout="row" layout-align="end center">
                     <md-button ng-click="MC.removeMe( movie.id )">Delete</md-button>
                 </md-card-actions>

@@ -6,7 +6,7 @@ app.controller('MovieController', function(MovieService){
 
     vm.getAllMovie = function(){
         MovieService.getMovie().then(function(){
-            vm.movie = MovieService.movie;
+            vm.movie = MovieService.movie;            
         });
     }// end getAllMovie
 
@@ -21,8 +21,12 @@ app.controller('MovieController', function(MovieService){
             title: vm.titleIn,
             genre_id: vm.genreIn,
             release_date: vm.dateIn,
-            run_time: vm.runTimeIn
+            run_time: vm.runTimeIn,
+            image: vm.imageIn
         };
+
+        console.log(movieToSend);
+        
         MovieService.postMovie(movieToSend).then(function(){
             vm.getAllMovie();
         });
