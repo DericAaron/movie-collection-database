@@ -1,7 +1,6 @@
-#title {
+.title {
     background-color: black;
     color: white;
-    padding-top: 2%;
 }
 
 nav{
@@ -14,11 +13,12 @@ nav .navbutton {
 }
 
 .container {
-    width: 80%;
-    margin-left: 20%;
+    margin-left: 5%;
 }
 
 .sideBar {
+
+    margin-left: 5%;
     width: 20%;
 }
 

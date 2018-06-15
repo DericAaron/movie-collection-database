@@ -1,9 +1,10 @@
 
-<h2>Add Movie</h2>
+
 <div ng-controller="MovieController as MC" layout="row">
     
     <div class="sideBar" layout="column">
         <div>
+                <h2>Add Movie</h2>
             <md-input-container class="md-block">
                 <input type="text" placeholder="Name" ng-model="MC.titleIn">
             </md-input-container>
@@ -12,13 +13,14 @@
             </md-input-container>
             
         </div>
-        <div layout="column" layout-xs="column" class="md-block" >
+        <div layout="column" class="md-block" >
             <md-input-container>
-                <select ng-model="MC.genreIn">
-                    <option value="">----Please Select----</option>
-                    <option ng-repeat="genre in MC.genre" ng-value="genre.id">{{genre.genre_name}}</option>
-                </select>
+                <label>Genre</label>
+                <md-select ng-model="MC.genreIn">
+                    <md-option ng-repeat="genre in MC.genre" ng-value="genre.id">{{genre.genre_name}}</md-option>
+                </md-select>
             </md-input-container>
+
             <md-datepicker ng-model="MC.dateIn" md-placeholder="Enter date"></md-datepicker>
             <md-input-container>
                 <input type="number" placeholder="Run Time (minutes)"  ng-model="MC.runTimeIn">
@@ -26,8 +28,8 @@
             <md-button ng-click="MC.submitMovie()">Submit</md-button>
         </div>
     </div>
-        <div class="container" layout="row" layout-xs="column">
-            <md-card ng-repeat="movie in MC.movie" class="movieCard" layout="column" flex="50" flex-gt-sm="20">
+        <div class="container" layout="row" layout-wrap>
+            <md-card ng-repeat="movie in MC.movie" class="movieCard" layout="column" flex="50" flex-gt-sm="20" layout-xs="column">
                 <md-card-title layout="column">
                     <p>{{movie.title}}</p>
                     <p>{{movie.genre_name}}</p>
