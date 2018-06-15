@@ -13,14 +13,13 @@ nav .navbutton {
     width: 50%;
 }
 
-#lowerInputBar {
-    display: inline-block;
-    padding: 0%;
-}
-
 .container {
     width: 80%;
-    margin-left: 10%;
+    margin-left: 20%;
+}
+
+.sideBar {
+    width: 20%;
 }
 
 table, th , td {
@@ -35,10 +34,8 @@ table, th , td {
     background-color: #ffffff;
   }
 
-table {
+table .genreTable{
     width: 100%;
 }
 
-/* .movieCard {
-    width: 30%;
-} */
+
