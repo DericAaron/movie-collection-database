@@ -1,15 +1,16 @@
 
 
-<div ng-controller="GenreController as GC" class="container">
-    <h2>Add Genre</h2>
-    <div class="md-block">
+<div ng-controller="GenreController as GC" layout="row">
+    
+    <div class="sideBar" layout="column">
+            <h2>Add Genre</h2>
         <md-input-container>
             <input type="text" placeholder="Project Name" ng-model="GC.genreIn">
         </md-input-container>
         <md-button ng-click="GC.submitGenre()">Submit</md-button>
     </div>
 
-    <div class="constainer">
+    <div class="container" layout="row" layout-wrap>
         <table class="genreTable">
             <thead>
                 <tr>
@@ -22,11 +23,6 @@
                 <tr ng-repeat="genre in GC.genre">
                     <td>{{genre.genre_name}}</td>
                     <td>{{genre.count}}</td>
-                    <td><button ng-click="GC.removeMe( genre.id )">Delete</button></td>
-                </tr>
-                <tr ng-repeat="genreU in GC.genreUnused" ng-hide"GC.genre.contains(genreU.genre_name)">
-                    <td>{{genre.genre_name}}</td>
-                    <td>0</td>
                     <td><button ng-click="GC.removeMe( genre.id )">Delete</button></td>
                 </tr>
             </tbody>
