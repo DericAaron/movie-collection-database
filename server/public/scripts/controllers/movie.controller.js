@@ -4,6 +4,14 @@ app.controller('MovieController', function(MovieService){
     vm.movie = [];
     vm.genre = [];
 
+    vm.clearInput = function(){
+        vm.titleIn = '';
+        vm.genreIn = vm.genre[0].id;
+        vm.dateIn = null;
+        vm.runTimeIn = '';
+        vm.imageIn = '';
+    }//end clearInput
+
     vm.getAllMovie = function(){
         MovieService.getMovie().then(function(){
             vm.movie = MovieService.movie;            
@@ -29,6 +37,7 @@ app.controller('MovieController', function(MovieService){
         
         MovieService.postMovie(movieToSend).then(function(){
             vm.getAllMovie();
+            vm.clearInput();
         });
         
     }//end submit movie

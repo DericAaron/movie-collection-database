@@ -29,8 +29,8 @@
         </div>
     </div>
         <div class="container" layout="row" layout-wrap>
-            <md-card ng-repeat="movie in MC.movie" class="movieCard" layout="column" flex="50" flex-gt-sm="20" layout-xs="column">
-                <md-card-title layout="column">
+            <md-card ng-repeat="movie in MC.movie" class="movieCard" layout="column" flex="50" flex-gt-sm="20">
+                <md-card-title layout="column" style="margin-bottom: 1px;">
                     <p>{{movie.title}}</p>
                     <p>{{movie.genre_name}}</p>
                 </md-card-title>

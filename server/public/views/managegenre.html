@@ -9,7 +9,7 @@
         <md-button ng-click="GC.submitGenre()">Submit</md-button>
     </div>
 
-    <div>
+    <div class="constainer">
         <table class="genreTable">
             <thead>
                 <tr>
@@ -22,6 +22,11 @@
                 <tr ng-repeat="genre in GC.genre">
                     <td>{{genre.genre_name}}</td>
                     <td>{{genre.count}}</td>
+                    <td><button ng-click="GC.removeMe( genre.id )">Delete</button></td>
+                </tr>
+                <tr ng-repeat="genreU in GC.genreUnused" ng-hide"GC.genre.contains(genreU.genre_name)">
+                    <td>{{genre.genre_name}}</td>
+                    <td>0</td>
                     <td><button ng-click="GC.removeMe( genre.id )">Delete</button></td>
                 </tr>
             </tbody>

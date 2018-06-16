@@ -3,6 +3,10 @@ app.controller('GenreController', function(GenreService){
 
     vm.genre = [];
 
+    vm.clearInput = function(){
+        vm.genreIn = '';
+    } //end clearInput
+
     vm.getAllGenre = function(){
         GenreService.getGenreCount().then(function(){
             vm.genre = GenreService.genre;
@@ -20,6 +24,7 @@ app.controller('GenreController', function(GenreService){
         
         GenreService.postGenre(genreToSend).then(function(){
             vm.getAllGenre();
+            vm.clearInput();
         });
         
     }//end submit genre
