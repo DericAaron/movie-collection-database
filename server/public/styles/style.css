@@ -1,18 +1,15 @@
+/* Genreal appearence */
 header {
     background-color: black;
     color: white;
     padding-top: 1%;
 }
-
-nav{
-   
+nav{  
     background-color: lightgray;
 }
-nav .navbutton {
-
-    width: 50%;
+a .navigation{
+    width: 100;
 }
-
 .container {
     margin-left: 5%;
     margin-right: 5%;
@@ -20,11 +17,11 @@ nav .navbutton {
 }
 
 .sideBar {
-
     margin-left: 5%;
     width: 20%;
 }
 
+/* table modifiers */
 table, th , td {
     border: 1px solid grey;
     border-collapse: collapse;

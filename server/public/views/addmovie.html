@@ -29,20 +29,55 @@
         </div>
     </div>
         <div class="container" layout="row" layout-wrap>
-            <md-card ng-repeat="movie in MC.movie" class="movieCard" layout="column" flex="50" flex-gt-sm="20">
-                <md-card-title layout="column" style="margin-bottom: 1px;">
-                    <p>{{movie.title}}</p>
-                    <p>{{movie.genre_name}}</p>
-                </md-card-title>
+            <md-card ng-repeat="movie in MC.movie" class="movieCard" layout="column" flex="30">
+
+                
+
+                    <md-card-header-text layout="column">
+                        <span class="md-headline">{{movie.title}}</span>
+                        <span class="md-subhead">{{movie.genre_name}}</span>
+                    </md-card-header-tex>
+                    <img ng-src="{{movie.image}}" class="md-card-image"alt="Not Found" style="width: 100%">
                     <md-card-content>
-                        <img ng-src="{{movie.image}}" alt="Not Found" style="width: 100%">
                         <p>Release Date: {{movie.release_date.substring(0,10) | date: 'MM/dd/yyyy'}}</p>
                         <p>minutes: {{movie.run_time}}</p>
                     </md-card-content>
                 
+                
+                
                 <md-card-actions layout="row" layout-align="end center">
                     <md-button ng-click="MC.removeMe( movie.id )">Delete</md-button>
                 </md-card-actions>
+
             </md-card>
         </div>
 </div>
+
+<!-- <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+          <md-card>
+            <img ng-src="{{movie.image}}" class="md-card-image" alt="Washed Out">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">Action buttons</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <p>
+                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+              </p>
+              <p>
+                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+              </p>
+              <p>
+                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+              </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button>Action 1</md-button>
+              <md-button>Action 2</md-button>
+            </md-card-actions>
+          </md-card> -->
