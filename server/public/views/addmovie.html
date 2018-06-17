@@ -37,7 +37,7 @@
                         <span class="md-headline">{{movie.title}}</span>
                         <span class="md-subhead">{{movie.genre_name}}</span>
                     </md-card-header-tex>
-                    <img ng-src="{{movie.image}}" class="md-card-image"alt="Not Found" style="width: 100%">
+                    <img src="/images/notfound.png" ng-src="{{movie.image}}" class="md-card-image"  style="width: 100%">
                     <md-card-content>
                         <p>Release Date: {{movie.release_date.substring(0,10) | date: 'MM/dd/yyyy'}}</p>
                         <p>minutes: {{movie.run_time}}</p>
